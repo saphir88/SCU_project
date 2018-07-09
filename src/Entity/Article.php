@@ -60,7 +60,7 @@ class Article
     private $tags;
 
     /**
-     * @OneToMany(targetEntity="Comment", mappedBy="article")
+     * @OneToMany(targetEntity="Comment", mappedBy="article", cascade={"persist", "remove"})
      */
     private $comments;
 

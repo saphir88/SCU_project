@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
-use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\OneToMany;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
@@ -30,8 +32,13 @@ class Comment
     private $date;
 
     /**
-     * @OneToOne(targetEntity="Comment")
-     * @JoinColumn(name="parent_id", referencedColumnName="id")
+     * @OneToMany(targetEntity="Comment", mappedBy="parent", cascade={"persist", "remove"})
+     */
+    private $children;
+
+    /**
+     * @ManyToOne(targetEntity="Comment", inversedBy="children")
+     * @JoinColumn(name="parent", referencedColumnName="id")
      */
     private $parent;
 
@@ -46,6 +53,10 @@ class Comment
      * @JoinColumn(name="author", referencedColumnName="id")
      */
     private $author;
+
+    public function __construct() {
+        $this->children = new ArrayCollection();
+    }
 
     public function __toString()
     {
@@ -113,6 +124,37 @@ class Comment
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getChildren(): Collection
+    {
+        return $this->children;
+    }
+
+    public function addChild(Comment $child): self
+    {
+        if (!$this->children->contains($child)) {
+            $this->children[] = $child;
+            $child->setParent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChild(Comment $child): self
+    {
+        if ($this->children->contains($child)) {
+            $this->children->removeElement($child);
+            // set the owning side to null (unless already changed)
+            if ($child->getParent() === $this) {
+                $child->setParent(null);
+            }
+        }
 
         return $this;
     }
