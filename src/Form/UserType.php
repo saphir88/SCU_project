@@ -17,6 +17,7 @@ class UserType extends AbstractType
             ->add('email')
             ->add('registered')
             ->add('publicName')
+            ->add('rank')
         ;
     }
 

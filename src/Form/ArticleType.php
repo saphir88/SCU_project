@@ -18,6 +18,8 @@ class ArticleType extends AbstractType
             ->add('content')
             ->add('status')
             ->add('meta')
+            ->add('tags')
+            ->add('author')
         ;
     }
 
