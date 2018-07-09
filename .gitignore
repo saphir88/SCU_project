@@ -49,7 +49,7 @@
 /.web-server-pid
 
 # PhpStorm
-
+/.idea/
 
 #webpack encore
 /node_modules/
