@@ -48,7 +48,7 @@ class User
 
     /**
      * @ManyToOne(targetEntity="Rank", inversedBy="users")
-     * @JoinColumn(name="rank_id", referencedColumnName="id")
+     * @JoinColumn(name="rank_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $rank;
 

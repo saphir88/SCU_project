@@ -25,7 +25,7 @@ class Rank
     private $name;
 
     /**
-     * @OneToMany(targetEntity="User", mappedBy="rank")
+     * @OneToMany(targetEntity="User", mappedBy="rank", cascade={"persist"})
      */
     private $users;
 
