@@ -50,7 +50,7 @@ class Comment
 
     /**
      * @ManyToOne(targetEntity="User", inversedBy="comments")
-     * @JoinColumn(name="author", referencedColumnName="id")
+     * @JoinColumn(name="author", referencedColumnName="id", onDelete="SET NULL")
      */
     private $author;
 

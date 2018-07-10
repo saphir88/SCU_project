@@ -53,7 +53,7 @@ class User
     private $rank;
 
     /**
-     * @OneToMany(targetEntity="Comment", mappedBy="author")
+     * @OneToMany(targetEntity="Comment", mappedBy="author", cascade={"persist"})
      */
     private $comments;
 
