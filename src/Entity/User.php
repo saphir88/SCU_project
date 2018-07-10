@@ -58,7 +58,7 @@ class User
     private $comments;
 
     /**
-     * @OneToMany(targetEntity="Article", mappedBy="author")
+     * @OneToMany(targetEntity="Article", mappedBy="author", cascade={"persist"})
      */
     private $articles;
 

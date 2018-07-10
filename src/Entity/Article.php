@@ -66,7 +66,7 @@ class Article
 
     /**
      * @ManyToOne(targetEntity="User", inversedBy="articles")
-     * @JoinColumn(name="author", referencedColumnName="id")
+     * @JoinColumn(name="author", referencedColumnName="id", onDelete="SET NULL")
      */
     private $author;
 
