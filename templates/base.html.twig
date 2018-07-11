@@ -4,16 +4,15 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
 
-        <!-- Main CSS-->
+        <!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
-        <button type="button" class="btn btn-primary">Primary</button>
         {% block javascripts %}{% endblock %}
 
-        <!-- Main JS-->
+        <!-- Main JS -->
         <script src="{{ asset('build/js/app.js') }}"></script>
     </body>
 </html>
