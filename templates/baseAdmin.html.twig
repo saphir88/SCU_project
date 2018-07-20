@@ -158,7 +158,6 @@
         </div>
         <!-- END PAGE CONTAINER -->
     </div>
-        {% block javascripts %}{% endblock %}
         <!-- ADMIN JS -->
             <!-- Jquery JS -->
             <script src="{{ asset('styleAdmin/vendor/jquery-3.2.1.min.js') }}"></script>
@@ -182,5 +181,6 @@
 
         <!-- Main JS -->
         <script src="{{ asset('build/js/app.js') }}"></script>
+    {% block javascripts %}{% endblock %}
     </body>
 </html>

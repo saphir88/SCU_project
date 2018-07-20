@@ -104,6 +104,7 @@ body {
     font-size: 16px;
     line-height: 1.625;
     color: #666;
+    background: #e5e5e5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -4539,7 +4540,7 @@ section {
     border: none;
 }
 
-.table-data2.table tbody td.desc {
+.table-data2.table tbody td.rankName {
     color: #4272d7;
 }
 
@@ -14638,4 +14639,31 @@ section {
 
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
+}
+
+/*-----------------------------------------------*/
+/*               OWN ADDED CONTENT               */
+/*-----------------------------------------------*/
+
+.button-delete:hover {
+    background: #dc3545;
+    transition: .5s;
+}
+
+.save {
+    display: none;
+}
+
+.savetest:hover {
+    background: #63c76a;
+    transition: .5s;
+}
+
+.edit:hover {
+    background: #00aced;
+    transition: .5s;
+}
+
+input[type='text'] {
+    border: solid 1px lightgrey;
 }
