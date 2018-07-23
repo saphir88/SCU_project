@@ -5,7 +5,12 @@ $myBlack: #2C2E2C;
 
 body {
 }
+
 nav {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+
   #plan1 {
     position: absolute;
     z-index: 2;
@@ -15,11 +20,16 @@ nav {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     background-color: $myBlack ;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
   }
+
   #plan2 {
     position: absolute;
     z-index: 1;
   }
+
   .navbar-nav {
     margin-left: 125px;
   }
