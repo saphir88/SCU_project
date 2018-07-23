@@ -1,0 +1,41 @@
+/* sass --watch assets/css/app.scss:public/build/css/app.css */
+$color: blue;
+$myWhite: #EEEEEE;
+$myBlack: #2C2E2C;
+
+body {
+}
+nav {
+  #plan1 {
+    position: absolute;
+    z-index: 2;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: $myBlack ;
+  }
+  #plan2 {
+    position: absolute;
+    z-index: 1;
+  }
+  .navbar-nav {
+    margin-left: 125px;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.elem {
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
