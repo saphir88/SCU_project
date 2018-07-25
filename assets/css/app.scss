@@ -2,10 +2,15 @@
 $color: blue;
 $myWhite: #EEEEEE;
 $myBlack: #2C2E2C;
+$myNavbarColor: #202020;
+$darkGold: #B46816;
+$sand: #D7B577;
+$footerLink : #A9A9A9;
 
 body {
 }
 
+//navbar
 nav {
   -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
@@ -19,7 +24,7 @@ nav {
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background-color: $myBlack ;
+    background-color: $myNavbarColor ;
     -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
@@ -33,12 +38,18 @@ nav {
   .navbar-nav {
     margin-left: 125px;
   }
+  .active {
+    border-width: 0px 0px 3px 0px;
+    border-style: solid;
+    border-color: $sand;
+  }
 }
 
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
+  z-index:1;
 }
 
 .elem {
@@ -48,4 +59,214 @@ nav {
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+// Section LastPost
+.testimg {
+  -webkit-clip-path: polygon(7.5% 0, 100% 0, 100% 85%, 92.5% 100%, 0 100%, 0 15%);
+  clip-path: polygon(7.5% 0, 100% 0, 100% 85%, 92.5% 100%, 0 100%, 0 15%);
+}
+.dateAndTitle {
+  padding-left: 50px;
+  color: $darkGold;
+}
+
+.datetime {
+  display: block;
+  border-width: 0px 3px 0px 0px;
+  border-style: solid;
+  border-color: $darkGold;
+  padding: 15px;
+}
+
+.puzzlePiece1 {
+  width: 600px;
+  height: 20px;
+  background:$myBlack;
+  -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+}
+
+.puzzlePiece2 {
+  width: 600px;
+  height: 20px;
+  background:$myBlack;
+  -webkit-clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.lastPost {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  a {
+    text-decoration: none;
+    color:$darkGold;
+  }
+}
+
+.bla {
+  height: 20px;
+}
+
+// Section Posts
+.sectionPosts {
+  background: $myBlack;
+  color: $sand;
+  a {
+    text-decoration: none;
+    color:$sand;
+  }
+}
+
+.datetimz {
+  display: block;
+  border-width: 0px 3px 0px 0px;
+  border-style: solid;
+  border-color: $sand;
+  padding: 0 ;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Section RoadmapPost
+.puzzlePiece3 {
+  width: 600px;
+  height: 20px;
+  background:$myBlack;
+  -webkit-clip-path: polygon(100% 0, 95% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 95% 100%, 0 100%, 0 0);
+}
+
+.puzzlePiece4 {
+  width: 600px;
+  height: 20px;
+  background:$myBlack;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 5% 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 5% 100%, 0 0);
+}
+
+// Footer
+footer {
+  background: $myBlack;
+  color:grey;
+}
+
+.flex-containerFooter {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.footerLeft {
+  width: 350px;
+  height: 300px;
+  background: $myNavbarColor;
+  margin-top: 30px;
+  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+
+  h1 {
+    margin-top:10px;
+  }
+  ol {
+    padding:0;
+    list-style-type: none;
+    li {
+      margin-top:15px;
+      a {
+        text-decoration: none;
+        color: $footerLink;
+      }
+      a:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.footerMid {
+  width: 350px;
+  height: 300px;
+  background: $myNavbarColor;
+  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+
+  h1 {
+    margin-top:10px;
+  }
+  ol {
+    padding:0;
+    list-style-type: none;
+    li {
+      margin-top:15px;
+      a {
+        text-decoration: none;
+        color: $footerLink;
+      }
+      a:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.footerRight {
+  width: 350px;
+  height: 300px;
+  background: $myNavbarColor;
+  margin-top: 30px;
+  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+
+  h1 {
+    margin-top:10px;
+  }
+  ol {
+    padding:0;
+    list-style-type: none;
+    li {
+      margin-top:15px;
+      a {
+        text-decoration: none;
+        color:$footerLink;
+      }
+      a:hover {
+        color:white;
+      }
+    }
+  }
+}
+
+.footMidBot {
+  position: absolute;
+  bottom:0;
+  width: 500px;
+  height: 30px;
+  background: $myNavbarColor;
+  -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+  font-size:0.8em;
+  a {
+    text-decoration: none;
+    color: $footerLink;
+  }
+  a:hover {
+    color: white;
+  }
+}
+
+.lastFoot {
+  height: 30px;
+  background: $myNavbarColor;
+  font-size:0.9em;
+  text-align:center;
+  a {
+    text-decoration: none;
+    color: $footerLink;
+  }
+  a:hover {
+    color:white;
+  }
 }
