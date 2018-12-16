@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <!-- ADMIN CSS -->
+            <!-- Fontfaces CSS -->
+            <link href="{{ asset('styleAdmin/css/font-face.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+            <!-- Bootstrap CSS -->
+            <link href="{{ asset('styleAdmin/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
+            <!-- Vendor CSS -->
+            <link href="{{ asset('styleAdmin/vendor/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/wow/animate.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/slick/slick.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
+            <link href="{{ asset('styleAdmin/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
+            <!-- Main_Admin CSS -->
+            <link href="{{ asset('styleAdmin/css/theme.css') }}" rel="stylesheet" media="all">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE -->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="{{ asset('styleAdmin/images/icon/logo.png') }}" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-text"></i>Gestion des Articles</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-table"></i>Base de données</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-users"></i>Gestion des utilisateurs</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE -->
+
+        <!-- MENU SIDEBAR -->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{ asset('styleAdmin/images/icon/logo.png') }}" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('article_index') }}">
+                                <i class="fas fa-file-text"></i>Gestion des Articles</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('rank_index') }}">
+                                <i class="fas fa-table"></i>Gestion des rangs</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('user_index') }}">
+                                <i class="fas fa-users"></i>Gestion des utilisateurs</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR -->
+
+        <!-- PAGE CONTAINER -->
+        <div class="page-container">
+            <!-- HEADER DESKTOP -->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="float-right header-wrap">
+                            <div class="header-button">
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="{{ asset('styleAdmin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">john doe</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="{{ asset('styleAdmin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">john doe</a>
+                                                    </h5>
+                                                    <span class="email">johndoe@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Compte</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Paramètres</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Déconnexion</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP -->
+        {% block body %}{% endblock %}
+        </div>
+        <!-- END PAGE CONTAINER -->
+    </div>
+        <!-- ADMIN JS -->
+            <!-- Jquery JS -->
+            <script src="{{ asset('styleAdmin/vendor/jquery-3.2.1.min.js') }}"></script>
+            <!-- Bootstrap JS -->
+            <script src="{{ asset('styleAdmin/vendor/bootstrap-4.1/popper.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
+            <!-- Vendor JS -->
+            <script src="{{ asset('styleAdmin/vendor/slick/slick.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/wow/wow.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/animsition/animsition.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/counter-up/jquery.waypoints.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/counter-up/jquery.counterup.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/circle-progress/circle-progress.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/chartjs/Chart.bundle.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/select2/select2.min.js') }}"></script>
+            <script src="{{ asset('styleAdmin/vendor/select2/select2.min.js') }}"></script>
+            <!-- Main_Admin JS -->
+            <script src="{{ asset('styleAdmin/js/main.js') }}"></script>
+
+        <!-- Main JS -->
+        <script src="{{ asset('build/js/app.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>

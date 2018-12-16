@@ -1,43 +1,147 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}SCU - Admin : Utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <div class="container">
+        <h1 class="m-b-25 m-t-100">Liste des utilisateurs</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Login</th>
-                <th>Password</th>
-                <th>Email</th>
-                <th>Registered</th>
-                <th>PublicName</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.login }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.registered ? user.registered|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.publicName }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <!-- FILTER / ADD / EXPORT -->
+        <div class="table-data__tool m-b-0">
+            <div class="table-data__tool-left">
+            </div>
+            <div class="table-data__tool-right">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="addRank">
+                    <i class="zmdi zmdi-plus"></i>Ajouter un utilisateur</button>
+            </div>
+        </div>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+        <!-- RANKS TABLE -->
+        <div class="table-responsive table-responsive-data2">
+            <table class="table table-data2">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Id</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Registered</th>
+                    <th>PublicName</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr class="tr-shadow">
+                        <td></td>
+                        <td class="userId">{{ user.id }}</td>
+                        <td class="userLogin">{{ user.login }}</td>
+                        <td class="userPassword">{{ user.password }}</td>
+                        <td class="userEmail">{{ user.email }}</td>
+                        <td class="userRegistered">{{ user.registered }}</td>
+                        <td class="userPublicName">{{ user.publicName }}</td>
+                        <td>
+                            <div class="table-data-feature">
+                                <button class="item edit">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </button>
+                                <div class="save m-r-5">
+                                    <button class="item savetest">
+                                        <i class="zmdi zmdi-save"></i>
+                                    </button>
+                                </div>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Voir tous les utilisateurs portant ce rang">
+                                    <i class="zmdi zmdi-more"></i>
+                                </button>
+                                <form class="m-l-25" method="post" action="{{ path('user_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                    <button class="item button-delete" data-toggle="tooltip" data-placement="top" title="Supprimer">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="spacer"></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $('#addRank').click(function(){
+            $('.edit').hide();
+            $(this).hide();
+
+            $('.table tr:last').after(
+                "<tr class=\"tr-shadow addedtr\">\n" +
+                "   <td>\n" +
+                "       <label class=\"au-checkbox\">\n" +
+                "           <input type=\"checkbox\">\n" +
+                "               <span class=\"au-checkmark\"></span>\n" +
+                "       </label>\n" +
+                "   </td>\n" +
+                "       <td class=\"rankId\"></td>\n" +
+                "           <td class=\"rankName\"><input form='myform' id='rankNameInput' name='newRankName' type='text'></td>\n" +
+                "       <td>\n" +
+                "          <div class=\"table-data-feature\">\n" +
+                "             <div class=\"add m-r-5\">\n" +
+                "               <form id='myform' method=\"POST\" action=\"{{ path('rank_index') }}\" >" +
+                "                 <button type=\"submit\" class=\"item savetest\">\n" +
+                "                     <i class=\"zmdi zmdi-save\"></i>\n" +
+                "                 </button>\n" +
+                "               </form>" +
+                "             </div>\n" +
+                "             <button class=\"item annuler button-delete\">\n" +
+                "                 <i class=\"zmdi zmdi-delete\"></i>\n" +
+                "             </button>\n" +
+                "         </div>\n" +
+                "    </td>\n" +
+                "</tr>\n" +
+                "<tr class=\"spacer addedtr\"></tr>");
+            $("html, body").stop().animate( { scrollTop: $('#rankNameInput').offset().top }, 500);
+        });
+
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '.annuler', function () {
+                $('.edit').show();
+                $('#addRank').show();
+                $("html, body").stop().animate( { scrollTop: $('body').offset().top }, 500);
+                $('.addedtr').remove();
+            })
+        })
+    </script>
+
+    <script>
+        $('.edit').click(function(){
+            $('.edit').hide();
+            $(this).siblings('.save').show();
+            var rankName = $(this).parents('td').siblings('.rankName').html();
+            $(this).parents('td').siblings('.rankName').html("<input class='rankNameInput' type='text' value=" + rankName + ">");
+        })
+    </script>
+
+    <script>
+        $('.save').click(function(){
+            $(this).hide();
+            var rankName = $('.rankNameInput').val();
+            var rankId = $(this).parents('td').siblings('.rankId').html();
+            $(this).parents('td').siblings('.rankName').html(rankName);
+            $.ajax({
+                url: '{{ path('rank_index') }}',
+                type: 'POST',
+                data: {rankId:rankId, rankName:rankName},
+            });
+            $('.edit').show();
+        });
+    </script>
 {% endblock %}

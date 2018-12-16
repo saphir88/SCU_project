@@ -24,6 +24,14 @@ class ArticleController extends Controller
     }
 
     /**
+     * @Route("/test", name="article_test", methods="GET")
+     */
+    public function testArticle()
+    {
+        return $this->render('article/article.html.twig');
+    }
+
+    /**
      * @Route("/new", name="article_new", methods="GET|POST")
      */
     public function new(Request $request): Response
