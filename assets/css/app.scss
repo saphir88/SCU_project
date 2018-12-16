@@ -8,6 +8,7 @@ $sand: #D7B577;
 $footerLink : #A9A9A9;
 
 body {
+  background : $myWhite;
 }
 
 //navbar
@@ -269,4 +270,41 @@ footer {
   a:hover {
     color:white;
   }
+}
+
+// Article Template
+.headerPicture {
+  -webkit-clip-path: polygon(7.5% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+  clip-path: polygon(7.5% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+}
+
+.articleCorps {
+  width: 1050px;
+  background: white;
+}
+
+.articleSign {
+  background: white;
+  width: 1050px;
+  height: 150px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 95% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 95% 100%, 0 100%);
+  display:flex;
+  align-items:center;
+}
+
+.avatarSign {
+
+}
+
+.descSign {
+  margin-left:-40px;
+  background: $myWhite;
+  height:75px;
+  font-size: 90%;
+  line-height: 150%;
+}
+
+.auteurSign {
+  margin-left:-40px;
 }

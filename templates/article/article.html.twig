@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block title %}SCU - Article{% endblock %}
+
+{% block body %}
+    <div id="sliderBeacon"></div>
+    {% include 'components/navbar.html.twig' %}
+    <div class="container lastPost">
+        <div class="row justify-content-center">
+            <div class="row mt-2">
+                <img class="headerPicture d-block" src="http://via.placeholder.com/1050x420">
+            </div>
+            <div class="row mt-2">
+                <div class="articleCorps">
+                    <div class="dateAndTitle container mt-2">
+                        <div class="row">
+                            <div class="col-1 datetime">
+                                <div>20/03/18</div>
+                                <div class="text-center">15h30</div>
+                            </div>
+                            <div class="col-11">
+                                <div>Evenement</div>
+                                <h1>m m m m m m m m m m m m m m m m m m m m</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml-5 mr-5 mt-3 mb-3 text-justify">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis hendrerit arcu id vestibulum. Ut maximus erat nisl, sit amet vulputate nisi ultrices a. Morbi et laoreet justo. Suspendisse porttitor magna at suscipit egestas. Sed quis ante vel lectus vehicula feugiat vitae a urna. Cras nec commodo tellus, in facilisis odio. Nam vitae fermentum lorem. Vestibulum hendrerit eros ultricies, consectetur eros id, bibendum sapien. Integer non turpis a ex pellentesque venenatis eget nec metus.
+
+                            Nam a velit bibendum, maximus felis non, volutpat nisl. Aliquam erat volutpat. Phasellus in mauris non justo cursus sollicitudin ut vitae odio. Nunc pharetra sed elit vel suscipit. Nullam euismod semper nulla, et pretium ipsum bibendum dapibus. Suspendisse potenti. Vivamus neque velit, ultricies sit amet dui at, tempus consequat neque. Morbi posuere at nulla quis suscipit. Nam fermentum posuere est, vel luctus risus bibendum at. Integer interdum ex sed quam blandit lacinia. Vivamus ac libero ut ex pulvinar tincidunt. Nullam blandit tempus egestas. Suspendisse vitae commodo lorem, vel sollicitudin ex. Integer lobortis metus metus, quis convallis magna congue ut. Vivamus quis odio at velit condimentum molestie.
+
+                            Fusce euismod orci vitae venenatis sodales. Ut et diam posuere velit cursus molestie eget ac mauris. Nam sagittis lectus ut diam vestibulum rutrum. Donec ac diam tempor, pretium orci sed, vulputate lorem. Donec efficitur arcu nec auctor facilisis. Ut venenatis lacus in arcu pharetra, in suscipit lectus eleifend. Pellentesque malesuada congue rhoncus. Nunc elementum risus vitae nulla posuere, eu dignissim metus elementum. Curabitur pretium viverra enim, ut consequat massa porta nec. Nullam dignissim nunc non luctus malesuada. Aliquam erat volutpat. Aliquam at ante nec tortor euismod viverra at vitae nisi. Ut tristique congue interdum. Nunc diam orci, varius consectetur varius ut, rhoncus nec nibh. Duis viverra porttitor lectus at pulvinar. Praesent eget vulputate neque, nec blandit ipsum.
+
+                            Nullam at metus ligula. Phasellus sit amet rhoncus massa. Fusce posuere purus non felis rhoncus, at euismod neque blandit. Aenean ante neque, suscipit eu malesuada a, feugiat bibendum diam. Praesent sed nunc eleifend, tristique justo a, tempus orci. Curabitur vel interdum sapien. Sed ullamcorper felis nibh, vitae gravida eros pretium quis. Etiam dignissim, augue a vehicula mattis, lorem felis imperdiet tortor, vel ornare est ante eget metus. Nunc bibendum mattis tristique. Curabitur vitae mollis enim. Curabitur justo nisi, pellentesque nec blandit eu, tristique sed ante. In at dictum orci, eget luctus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend tincidunt porta. Aenean ac auctor felis, eget accumsan metus.
+
+                            Phasellus maximus, augue vitae ultricies maximus, lacus tortor rutrum nunc, eget dignissim tortor metus non sem. In ac felis vestibulum, feugiat turpis eu, feugiat mauris. Donec vitae convallis diam. Sed purus nibh, congue in malesuada a, viverra id justo. Praesent eu elementum enim. Aenean pulvinar nibh non ex sodales rhoncus. Suspendisse mauris orci, cursus sit amet elementum et, commodo ac ante. Etiam aliquam felis sit amet mauris tempor, in venenatis ante pharetra. Proin accumsan pulvinar dui at pharetra. Nullam non nunc ornare, eleifend tortor in, hendrerit erat. Suspendisse potenti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="articleSign">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-2">
+                                <img class="avatarSign" src="http://via.placeholder.com/100x100">
+                            </div>
+                            <div class="col-8">
+                                <div class="auteurSign">A propos de l'auteur : Saphir88</div>
+                                <div class="descSign">
+                                    Saphir88 est le fondateur et webmaster de Star Citizen Universe. Depuis Mars 2018, il s'occupe du développement du site et en est également le rédacteur en chef. Il s'assure de la bonne couverture de l'actualité de la galaxie au quotidien.
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="row">
+                                    <button type="button" class="btn btn-secondary">Left</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-secondary">Left</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="puzzlePiece1"></div>
+        <div class="puzzlePiece2"></div>
+    </div>
+    {% include 'components/footer.html.twig' %}
+{% endblock %}
